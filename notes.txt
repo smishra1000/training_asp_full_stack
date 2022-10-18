@@ -1,0 +1,387 @@
+CSS stands for Cascading Style Sheets. CSS is a standard style sheet language used for describing the presentation (i.e. the layout and formatting) of the web pages.
+
+Prior to CSS, nearly all of the presentational attributes of HTML documents were contained within the HTML markup (specifically inside the HTML tags); all the font colors, background styles, element alignments, borders and sizes had to be explicitly described within the HTML.
+
+As a result, development of the large websites became a long and expensive process, since the style information were repeatedly added to every single page of the website.
+
+To solve this problem CSS was introduced in 1996 by the World Wide Web Consortium (W3C), which also maintains its standard. CSS was designed to enable the separation of presentation and content. Now web designers can move the formatting information of the web pages to a separate style sheet which results in considerably simpler HTML markup, and better maintainability.
+
+CSS3 is the latest version of the CSS specification. CSS3 adds several new styling features and improvements to enhance the web presentation capabilities.
+
+
+
+There are lot more things you can do with CSS.
+
+You can easily apply same style rules on multiple elements.
+You can control the presentation of multiple pages of a website with a single style sheet.
+You can present the same page differently on different devices.
+You can style dynamic states of elements such as hover, focus, etc. that isn't possible otherwise.
+You can change the position of an element on a web page without changing the markup.
+You can alter the display of existing HTML elements.
+You can transform elements like scale, rotate, skew, etc. in 2D or 3D space.
+You can create animations and transitions effects without using any JavaScript.
+You can create print friendly version of your web pages.
+
+
+Including CSS in HTML Documents
+CSS can either be attached as a separate document or embedded in the HTML document itself. There are three methods of including CSS in an HTML document:
+
+Inline styles — Using the style attribute in the HTML start tag.
+Embedded styles — Using the <style> element in the head section of a document.
+External style sheets — Using the <link> element, pointing to an external CSS file.
+
+example--<h1 style="color:red; font-size:30px;">This is a heading</h1>
+
+embedded style
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My HTML Document</title>
+    <style>
+        body { background-color: YellowGreen; }
+        p { color: #fff; }
+    </style>
+</head>
+<body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph of text.</p>
+</body>
+</html>
+
+External Style Sheets
+An external style sheet is ideal when the style is applied to many pages of the website.
+
+
+A CSS stylesheet consists of a set of rules that are interpreted by the web browser and then applied to the corresponding elements such as paragraphs, headings, etc. in the document.
+
+Understanding CSS Syntax
+A CSS rule have two main parts, a selector and one or more declarations
+The selector specifies which element or elements in the HTML page the CSS rule applies to.
+
+Whereas, the declarations within the block determines how the elements are formatted on a webpage. Each declaration consists of a property and a value separated by a colon (:) and ending with a semicolon (;), and the declaration groups are surrounded by curly braces {}.
+
+The property is the style attribute you want to change; they could be font, color, background, etc. Each property has a value, for example color property can have value either blue or #0000FF etc.
+
+h1 {color:blue; text-align:center;}
+
+
+CSS Selectors
+What is Selector?
+A CSS selector is a pattern to match the elements on a web page. The style rules associated with that selector will be applied to the elements that match the selector pattern.
+
+Universal Selector
+The universal selector, denoted by an asterisk (*), matches every single element on the page.
+
+The universal selector may be omitted if other conditions exist on the element. This selector is often used to remove the default margins and paddings from the elements for quick testing purpose.
+
+Let's try out the following example to understand how it basically works:
+
+ExampleTry this code »
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+Element Type Selectors
+
+An element type selector matches all instance of the element in the document with the corresponding element type name. Let's try out an example to see how it actually works:
+
+p {
+    color: blue;
+}
+
+Id Selectors
+The id selector is used to define style rules for a single or unique element.
+
+The id selector is defined with a hash sign (#) immediately followed by the id value.
+
+#error {
+    color: red;
+}
+
+
+Class Selectors
+The class selectors can be used to select any HTML element that has a class attribute. All the elements having that class will be formatted according to the defined rule.
+
+The class selector is defined with a period sign (.) immediately followed by the class value.
+
+.blue {
+    color: blue;
+}
+
+Descendant Selectors
+You can use these selectors when you need to select an element that is the descendant of another element, for example, if you want to target only those anchors that are contained within an unordered list, rather than targeting all anchor elements. Let's see how it works:
+ul.menu li a {
+    text-decoration: none;
+}
+h1 em {
+    color: green;
+}
+
+
+Child Selectors
+A child selector is used to select only those elements that are the direct children of some element.
+
+A child selector is made up of two or more selectors separated by a greater than symbol (>). You can use this selector, for instance, to select the first level of list elements inside a nested list that has more than one level. 
+Let's check out an example to understand how it works:
+
+Adjacent Sibling Selectors
+The adjacent sibling selectors can be used to select sibling elements (i.e. elements at the same level). This selector has the syntax like: E1 + E2, where E2 is the target of the selector.
+
+h1 + p {
+    color: blue;
+    font-size: 18px;
+}
+
+color 
+
+The color property defines the text color (foreground color in general) of an element.
+body {
+    color: #ff5722;
+}
+
+Setting Background Properties
+CSS provide several properties for styling the background of an element, including coloring the background, placing images in the background and managing their positioning, etc.
+The background-color property is used to set the background color of an element.
+
+The background-image property set an image as a background of an HTML element.
+
+
+body {
+    background-image: url("images/tile.png");
+}
+
+The background-repeat property allows you to control how a background image is repeated or tiled in the background of an element. You can set a background image to repeat vertically (y-axis), horizontally (x-axis), in both directions, or in neither direction.
+
+body {
+    background-image: url("images/texture.png");
+    background-repeat:repeat-x;
+
+    The background-position property is used to control the position of the background image.
+
+    If no background position has been specified, the background image is placed at the default top-left position of the element i.e. at (0,0), let's try out the following example:
+    
+    body {
+        background-image: url("images/robot.png");
+        background-repeat: no-repeat;
+        background-position: right top;
+    }
+
+
+    What is Box Model?
+Every element that can be displayed on a web page is comprised of one or more rectangular boxes. CSS box model typically describes how these rectangular boxes are laid out on a web page. These boxes can have different properties and can interact with each other in different ways, but every box has a content area and optional surrounding padding, border, and margin areas.
+
+The following diagram demonstrates how the width, height, padding, border, and margin CSS properties determines how much space an element can take on a web page.
+
+Padding is the transparent space between the element's content and its border (or edge of the box, if it has no border), whereas margin is the transparent space around the border.
+
+CSS Fonts
+CSS provide several properties for styling the font of the text, including changing their face, controlling their size and boldness, managing variant, and so on.
+
+The font properties are: font-family, font-style, font-weight, font-size, and font-variant.
+
+The font-family property is used to specify the font to be used to render the text.
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+Font Style
+The font-style property is used to set the font face style for the text content of an element.
+
+The font style can be normal, italic or oblique. The default value is normal.
+
+Font Size
+The font-size property is used to set the size of font for the text content of an element.
+
+h1 {
+    font-size: 24px;
+}
+
+Font Weight
+The font-weight property specifies the weight or boldness of the font.
+This property can take one of the following values: normal, bold, bolder, lighter, 100, 200, 300, 400, 500, 600, 700, 800, 900 and inherit.
+p {
+    font-weight: bold;
+}
+
+Setting Font Size with EM
+The em unit refers to the font size of the parent element. When defining the font-size property, 1em is equal to the size of the font that applies to the parent of the element.
+
+Setting Font Size with Root EM
+To make things even more simpler CSS3 has introduced rem unit (short for "root em") which is always relative to the font-size of the root element (html), regardless of where the element lies in the document (unlike em which is relative to parent element's font size).
+
+CSS Text
+CSS provides several properties that allows you to define various text styles such as color, alignment, spacing, decoration, transformation, etc. very easily and effectively.
+the color of the text is defined by the CSS color property.
+body {
+    color: #434343;
+}
+
+The text-align property is used to set the horizontal alignment of the text.
+
+The text-decoration property is used to set or remove decorations from text.
+
+Removing the Default Underline from Links
+The text-decoration property is extensively used to remove the default underline from the HTML hyperlinks.
+
+The text-transform property is used to set the cases for a text.
+
+The word-spacing property is used to specify additional spacing between the words.
+The letter-spacing property is used to set extra spacing between the characters of text.
+The line-height property is used to set the height of the text line.
+
+
+CSS Links
+Links or hyperlinks are an essential part of a website. It allows visitors to navigate through the site
+
+A link has four different states — link, visited, active and hover. These four states of a link can be styled differently through using the following anchor pseudo-class selectors.
+
+a:link — define styles for normal or unvisited links.
+a:visited — define styles for links that the user has already visited.
+a:hover — define styles for a link when the user place the mouse pointer over it.
+a:active — define styles for links when they are being clicked.
+
+a:link {    /* unvisited link */
+    color: #ff0000;
+    text-decoration: none;
+    border-bottom: 1px solid;
+}
+a:visited {    /* visited link */
+    color: #ff00ff;
+}
+a:hover {    /* mouse over link */
+    color: #00ff00;
+    border-bottom: none;
+}
+a:active {    /* active link */
+    color: #00ffff;
+}
+
+CSS Cursors
+CSS cursor property used to define cursor type (i.e. mouse pointer) when the mouse moves over a certain area or, over a link on the webpage.
+
+CSS Overflow
+The overflow property specifies the behavior that occurs when an element's content overflows (doesn't fit) the element's box.
+
+div {
+    width: 250px;
+    height: 150px;
+    overflow: scroll;
+}
+
+CSS Position
+
+The position property defines how an element will be positioned on a page.
+
+Static Positioning
+A static positioned element is always positioned according to the normal flow of the page. HTML elements are positioned static by default. Static positioned elements are not affected by the top, bottom, left, right, and z-index properties.
+
+Relative Positioning
+A relative positioned element is positioned relative to its normal position.
+
+In the relative positioning scheme the element's box position is calculated according to the normal flow. Then the box is shifted from this normal position according to the properties — top or bottom and/or left or right.
+
+.box {
+    position: relative;
+    left: 100px;
+}
+
+
+Absolute Positioning
+An absolutely positioned element is positioned relative to the first parent element that has a position other than static. If no such element is found, it will be positioned on a page relative to the 'top-left' corner of the browser window. The box's offsets further can be specified using one or more of the properties top, right, bottom, and left.
+
+.box {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+}
+
+Fixed Positioning
+Fixed positioning is a subcategory of absolute positioning.
+
+The only difference is, a fixed positioned element is fixed with respect to the browser's viewport and does not move when scrolled.
+
+.box {
+    position: fixed;
+    top: 200px;
+    left: 100px;
+}
+
+variables are used to store data-like string,text,number etc
+to create a variable with the var keyword whereas 
+assignment operator (=) is used to assign value
+ex- var age =20
+var name="test"
+var salary = 1200
+var isVoterValid = true
+
+Naming conventaion for variables
+1>A variable name must start with a letter,underscore,$
+2>A variable name cannnot start with number 
+3>varibale name cannot containe space
+4>var var=20
+
+data type---
+
+data types specify what kind of data can be stored.
+
+ex- var a= 20
+    var age = 30
+    var name="test"
+    var allowed = true
+
+    --String type--- 
+    var a = "hi am here"
+    var a ='hi i am here'
+
+    Number  type 
+
+    var a = 20
+    var b = 20.6
+    var a =-20
+
+
+    Boolean type 
+
+    var isCompleted = true
+    var isEmailValid = false
+
+
+    Undefined Type 
+
+    var a;
+
+    Null type
+    var a =null 
+
+    Object type 
+
+    var a = {
+        name:"sameer",
+        age:29,
+        address:"aspro"
+    }
+
+    var car ={
+        model:"bmw"
+        color:"white"
+        price:"50l"
+    }
+
+
+    Array Data type 
+
+    var age=[20,30,47,90,"test"]
+
+    var subjects = ['maths','c',cpp,java]
+
+    int a = [1,2,3,4,'test']
+
+
+
+
+
+
+

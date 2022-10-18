@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height:800px;
+
+            }
+            .box1{
+                width:600px;
+                height:305px;
+                background-color: red;
+            }
+
+            @media screen and (max-width: 321px){
+                .box1{
+                    background-color: green;
+                    width:1200px;
+                }
+            }
+        </style>
+        <title>
+            form demo
+        </title>
+    </head>
+    <body>
+        <label>Fname</label>
+        <input type="text" name="fname" placeholder="enter your name"/>
+        <div class="box1" id="box1">
+                hello i am div
+        </div>
+        <select name="course">
+            <option value="bca" disabled>Select Course</option>
+            <option value="bca">MTECH</option>
+            <option>MCA</option>
+            <option>BTECH</option>
+        </select>
+        <button onclick="changeView('web')">web view</button>
+        <button onclick="changeView('mobile')">mobile view </button>
+        <!-- <form>
+            <fieldset>
+                <legend>Employee</legend>
+                <label>Fname</label>
+                <input type="text" name="fname"/>
+            </fieldset>
+            <fieldset>
+                <legend></legend>
+                <label>First adress</label>
+                <input type="text" name="fname"/>
+            </fieldset>
+
+        </form> -->
+    </body>
+    <script>
+        function changeView(view){
+            console.log("",view)
+            if(view==='web') {
+                document.getElementById("box1").style.width='1200px';
+                document.getElementById("box1").style.background='yellow';
+            }else {
+                document.getElementById("box1").style.width='1200px';
+                document.getElementById("box1").style.background='cyan';
+            }
+        }
+        
+    </script>
+</html>
+
+<!-- legend---use to add a caption for form 
+
+fieldset : use to combine form elements -->

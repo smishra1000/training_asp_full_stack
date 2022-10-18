@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Oprators demo</title>
+
+    </head>
+    <body>
+        <script>
+            // +--
+            //var a = 30,b=50
+
+            // console.log(a+b)
+            // Arthimatic--+,-,*,/,%
+            // comparision-->  < >= <= != == ===
+            // var a = 30
+            // var b = "30"
+            // console.log(a==b) //true
+            // console.log(a===b) //false
+
+            //logical operator
+            // && -----it will return true if both are true 
+            // ||---it will return if one of the operand is true 
+            //  !----reverse of true and false
+            
+            // var a=30,b=10,c=50
+
+            // console.log(a>b && c>a)
+
+            // console.log(!(a<b && b<c || c>a))
+                //Increament operator/decrement operator 
+
+        
+                // a++  post increment
+                // ++a   pre increment
+
+                // a--  post decrement 
+                // --a  pre decrement 
+
+                // var a = 30;
+                // b = ++a;
+                // console.log(b,a)
+                // a = a+1
+                // b=a
+
+                // assignment operator 
+
+                // = 
+                // var a = {
+                //     name:"test"
+                // }
+                // console.log(a.name);
+
+                function calculate(a,b=20){
+                    console.log(a,b)
+                    console.log(a+b);
+                    console.log(a*b);
+                    console.log(a-b);
+                    console.log(a/b);
+                    console.log(a%b);
+                }
+
+                // function loginCheck(uemail,upassword) {
+                //     var email="sandeep@gmail.com"
+                //     var password="123"
+
+                //     if(email===uemail){
+                //         alert("email is valid")
+                //     }else {
+                //         alert("email is not valid")
+                //     }
+                // }
+
+                function checkEvenOrOdd(n) {
+                    for(i=0;i<n.length;i++){
+                        if(n[i]%2===0){
+                        console.log("number is even");
+                    }else{
+                        console.log("number is odd");
+                    }
+                    }
+                    
+                }
+                checkEvenOrOdd([2,5,4,9,7])
+                //checkEvenOrOdd(10)
+
+
+                //loginCheck("sandeep@gmail.com","123")
+
+                // calculate(30);
+                // calculate(30,100);
+
+
+
+
+
+
+
+
+
+                                
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
